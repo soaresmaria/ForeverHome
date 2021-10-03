@@ -1,0 +1,96 @@
+
+<article class="style2">
+  <button class="style1"><a href="/lawyer"> &larr; Back to List of Lawyers</a> </button>
+
+
+<section>
+  <h2>Add New Lawyer</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Firm Name : </label> <br>
+      <input type="text" id="post-title" name="post-title" style="font-size: 18pt; height: 30px; width:600px;" />
+    </div>
+ 
+    <div>
+      <label for="post-text">Firm Address :</label> <br>
+      <input id="post-text" name="post-text" style="font-size: 18pt; height: 200px; width:600px;"/>
+    </div>
+    
+    <div>
+      <label for="post-contact">Contact Number : </label> <br>
+      <input id="post-contact" name="post-contact" style="font-size: 18pt; height: 30px; width:600px;"/>
+    </div>
+ 
+    <br>
+    <button type="submit" class="style3">Create</button>
+  </form>
+</section>
+
+   <script src="/javascript/add-lawyer.js"></script>
+
+<section>
+  <h2>
+    Edit Lawyer Information
+  </h2>
+
+  <form class="edit-post-form">
+    <div>
+      <label for="post-title">Law Firm Name :</label> <br>
+      <input class="input" name="post-title1" type="text" value="{{post.office_name}}" style="font-size: 18pt; height: 30px; width:600px;"  />
+    </div>
+    
+    <div>
+      <label for="post-content">Firm Address :</label>   <br>
+      <input id="txtbox" class="textarea" name="post-text1" type="text" value="{{post.office_address}}" style="font-size: 18pt; height: 200px; width:600px;"/>
+    </div>
+
+    <div>
+      <label for="post-content">Phone number :</label> <br>
+      <input id="input" class="textarea" name="post-contact1" type="text" value="{{post.contact_number}}" style="font-size: 18pt; height: 30px; width:600px;"/>
+    </div>    
+    
+    
+    <div class="is-pulled-right">
+
+    
+
+    </div>
+    <button class="style1" type="submit">Save Information</button>
+    <button type="button" class="delete-post-btn">Delete Information</button>
+  </form>
+
+</section>
+
+</article>
+
+
+
+{{#if posts.length}}
+<section>
+  <h2>List of Lawyers</h2>
+  <ol>
+   
+    {{#each posts as |post|}}
+      
+    <li>
+   
+      {{> lawyer-info post}}
+   
+    
+    
+      <a href="/lawyer/edit/{{post.id}}" class="edit-link">Edit Lawyer Information</a>
+      <br>
+
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">There are no Lawyers in the list yet</h6>
+{{/if}}
+
+
+
+<script src="/javascript/edit-lawyer.js"></script>
+<script src="/javascript/delete-lawyer.js"></script>

@@ -1,0 +1,67 @@
+
+<article class="style2">
+  <button class="style1"><a href="/bank"> &larr; Back to Dashboard</a> </button>
+  
+  
+  <section>
+  <h2>Add New Bank</h2>
+
+  <form class="new-prop-form">
+    <div>
+      <label for="prop-title">Branch Name : </label> <br>
+      <input type="text" id="prop-title" name="prop-title" style="font-size: 18pt; height: 30px; width:600px;" />
+    </div>
+ 
+    <div>
+      <label for="prop-text">Branch Address :</label> <br>
+      <input id="prop-text" name="prop-text" style="font-size: 18pt; height: 200px; width:600px;"/>
+    </div>
+    
+    <div>
+      <label for="prop-contact">Contact Number : </label> <br>
+      <input id="prop-contact" name="prop-contact" style="font-size: 18pt; height: 30px; width:600px;"/>
+    </div>
+ 
+    <br>
+    <button type="submit" class="style3">Create</button>
+  </form>
+</section>
+
+
+  <section>
+  <h2>
+    Edit Bank Information
+  </h2>
+
+  <form class="edit-prop-form">
+    <div>
+      <label for="prop-title">Branch Name :</label> <br>
+      <input class="input" name="prop-title1" type="text" value="{{prop.branch_name}}" style="font-size: 18pt; height: 30px; width:600px;"  />
+    </div>
+    
+    <div>
+      <label for="prop-content">Branch Address :</label>   <br>
+      <input id="txtbox" class="textarea" name="prop-text1" type="text" value="{{prop.branch_address}}" style="font-size: 18pt; height: 200px; width:600px;"/>
+    </div>
+
+    <div>
+      <label for="prop-content">Phone number :</label> <br>
+      <input id="input" class="textarea" name="prop-contact1" type="text" value="{{prop.branch_number}}" style="font-size: 18pt; height: 30px; width:600px;"/>
+    </div>    
+    
+    
+    <div class="is-pulled-right">
+
+     
+
+    </div>
+    <button class="style1" type="submit">Save Information</button>
+    <button type="button" class="delete-prop-btn">Delete Information</button>
+  </form>
+  </section>
+</article>
+
+
+<script src="/javascript/add-bank.js"></script>
+<script src="/javascript/edit-bank.js"></script>
+<script src="/javascript/delete-bank.js"></script>

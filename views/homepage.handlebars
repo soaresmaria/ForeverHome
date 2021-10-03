@@ -1,0 +1,41 @@
+  
+    <article class="service">
+     <div >
+       <div class="row"> 
+         <div class="col">
+  
+<div class="w3-content w3-section" ">
+  <img class="mySlides" src="./assets/images/rotate1.jpg" >
+  <img class="mySlides" src="./assets/images/rotate2.jpg" >
+  <img class="mySlides" src="./assets/images/rotate3.jpeg" >
+  <img class="mySlides" src="./assets/images/rotate4.jpg" >
+  <img class="mySlides" src="./assets/images/rotate5.jpg" >
+  <img class="mySlides" src="./assets/images/rotate6.jpg" >
+</div>
+
+
+
+     </div>
+    </div> 
+  </div>
+</article>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+</script>
+
+

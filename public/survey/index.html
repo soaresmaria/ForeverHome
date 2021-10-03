@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+
+        <title>Feedback survey</title><meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.68/survey.jquery.min.js"></script>
+        <link href="https://unpkg.com/survey-core@1.8.68/modern.min.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./index.css">
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </head>
+    <body>
+
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+
+        <script type="text/javascript" src="./script.js"></script>
+
+
+<script>
+    function screenshot() {
+        html2canvas(document.querySelector("#test2")).then(canvas => {
+            document.body.appendChild(canvas)
+        });
+    }
+
+
+    function email() {
+        Email.send({
+    Host : "smtp.gmail.com",
+    Username : "codingcamp930@gmail.com",
+    Password : "Rutgers123@",
+    SSL : 465,
+    To : 'miraj00@gmail.com',
+    From : "dreamhome.com",
+    Subject : "Customer Survey Feedback",
+    Body : "And this is the body",
+    Attachments : [
+    {
+        name : "smtpjs.png",
+        data : canvas.toDataURL(),
+        path : "data:image/png;base64,iVBORw0KGgoAAAANSUhEgDz3/Km+vQGsoVNxX="
+    }]
+}).then(
+  message => alert(message))
+  .catch( error =>  console.log(error) );
+   
+  
+      
+      };
+</script>
+</body>
+</html>

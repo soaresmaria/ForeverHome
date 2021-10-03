@@ -1,0 +1,25 @@
+{{#if posts.length}}
+<section>
+  <h2>List of Lawyers</h2>
+  <ol>
+   
+    {{#each posts as |post|}}
+      
+    <li>
+   
+      {{> lawyer-info post}}
+   
+    
+    
+      
+      <br>
+
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">There are no Lawyers in the list yet</h6>
+{{/if}}
+
+<script src="/javascript/add-lawyer.js"></script>

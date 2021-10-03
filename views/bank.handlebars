@@ -1,0 +1,23 @@
+
+
+{{#if props.length}}
+<section>
+  <h2>List of Banks</h2>
+  <ol>
+   
+    {{#each props as |prop|}}
+      
+    <li>
+   
+      {{> bank-info prop}}
+   
+      <br>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">There are no banks listed</h6>
+{{/if}}
+
+<script src="/javascript/add-bank.js"></script>
